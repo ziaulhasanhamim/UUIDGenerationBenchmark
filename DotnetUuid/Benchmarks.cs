@@ -21,6 +21,13 @@ namespace DotnetUuid
         {
             var ulid = Ulid.NewUlid();
         }
+
+        [Benchmark]
+        public void Ulid_Guid()
+        {
+            var ulid = Ulid.NewUlid();
+            var guid = ulid.ToGuid();
+        }
         
         [Benchmark]
         public void Guid_String()
